@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "preinstall": "npm install -g gulp-cli",
+    "postinstall": "gulp build"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
