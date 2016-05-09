@@ -28,7 +28,7 @@ var server = http.createServer(app);
 
 configuration.load()
   .then(() => {
-    server.listen(port)
+    server.listen(port, process.env.OPENSHIFT_NODEJS_IP)
   });
 server.on('error', onError);
 server.on('listening', onListening);
