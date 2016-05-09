@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOL User Manager</title>
+    <script src="/js/libraries.min.js"></script>
+    <script src="/js/app.min.js"></script>
+</head>
+<body ng-app="LOLUserManager" ng-controller="Main">
+    <table>
+        <thead>
+            <td>Name</td>
+            <td>Tier</td>
+            <td>Division</td>
+            <td>In game</td>
+            <td>Last checked</td>
+            <td>Username</td>
+            <td>Password</td>
+        </thead>
+        <tr ng-repeat="user in users">
+            <td>{{user.name}}</td>
+            <td>{{user.ranking.tier}}</td>
+            <td>{{user.ranking.division}}</td>
+            <td>{{user.inGame ? 'yes' : 'no'}}</td>
+            <td>{{user.inGameTimestamp | moment}}</td>
+            <td>{{user.login.username}}</td>
+            <td>{{user.login.password}}</td>
+        </tr>
+    </table>
+    <div>
+        <div>Name: <input type="text" ng-model="userToAdd.name" /></div>
+        <div>Region: <select ng-options="region for region in regions" ng-model="userToAdd.region"></select></div>
+        <div>Username: <input type="text" ng-model="userToAdd.username" /></div>
+        <div>Password: <input type="text" ng-model="userToAdd.password" /></div>
+        <button ng-click="addUser()">Add user</button>
+    </div>
+</body>
+</html>
