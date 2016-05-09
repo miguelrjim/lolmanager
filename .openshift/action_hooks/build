@@ -7,5 +7,5 @@ fi
 if [ -f "${OPENSHIFT_REPO_DIR}"/gulpfile.js ]; then
  (cd "${OPENSHIFT_REPO_DIR}"; node_modules/.bin/gulp build)
 fi
-source ~/app-root/data/.bash_profile
+source "~/app-root/data/.bash_profile"
 export HOME=$OLD_HOME
