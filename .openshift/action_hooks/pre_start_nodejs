@@ -1,0 +1,2 @@
+echo "Exporting secret key"
+source $HOME/app-root/data/.bash_profile
