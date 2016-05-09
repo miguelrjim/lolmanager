@@ -118,4 +118,6 @@ gulp.task('watch', function() {
 
 });
 
+gulp.task('build', ['js-libraries', 'uglify-js', 'css-libraries', 'less', 'html-minify'])
+
 gulp.task('default', ['watch']);
