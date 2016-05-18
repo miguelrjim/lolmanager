@@ -18,7 +18,7 @@
             <td>Username</td>
             <td>Password</td>
         </thead>
-        <tr ng-repeat="user in users">
+        <tr ng-repeat="user in users track by $index">
             <td>{{user.name}}</td>
             <td>{{user.ranking.tier}}</td>
             <td>{{user.ranking.division}}</td>
