@@ -22,4 +22,9 @@ router.get('/:id/currentGame', (req, res) => {
     .then(result => res.status(200).send(result));
 })
 
+router.put('/:id/league', (req, res) => {
+  users.getLeagues(req.params.id)
+    .then(result => res.status(200).send(result[0]));
+})
+
 module.exports = router;

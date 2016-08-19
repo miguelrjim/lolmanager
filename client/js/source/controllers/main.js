@@ -37,5 +37,11 @@ angular.module('LOLUserManager')
             user.inGameTimestamp = response.data.inGameTimestamp;
           });
       }
+      $scope.updateLeague = user => {
+        $http.put(`/users/${user.id}/league`)
+          .then(response => {
+            Object.assign(user, response.data);
+          })
+      }
     }
   ])

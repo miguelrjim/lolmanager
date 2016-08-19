@@ -24,7 +24,10 @@
             <td>{{user.ranking.division}}</td>
             <td>{{user.inGame ? 'Yes' : 'No'}}</td>
             <td>{{user.inGameTimestamp | moment}}</td>
-            <td><button ng-click="currentGame(user)">Check</button></td>
+            <td>
+                <button ng-click="currentGame(user)">Check in-game</button>
+                <button ng-click="updateLeague(user)">Update league</button>
+            </td>
             <td>{{user.login.username}}</td>
             <td>{{user.login.password}}</td>
         </tr>
